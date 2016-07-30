@@ -1,8 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@page import="com.elitecore.model.User" %>
-<%-- <%@include file="CssAndJs/bootstrap.css" %> --%>
-<%-- <%@include file="CssAndJs/stylesheet.css" %> --%>
 <html>
 <head>
 	<title>Login</title>
@@ -16,6 +14,7 @@
 </head>
 
 <body>
+
 ${key}
 <div id="header" class="container-fluid">
 		<div class="col-sm-1">

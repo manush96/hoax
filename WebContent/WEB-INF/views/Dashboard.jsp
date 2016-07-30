@@ -20,7 +20,7 @@
 			<img src="img/logo.png" style="height: 80px; width: 80px"/>
 		</div>
 		<div class="col-sm-11">
-			<h1 class="text-center">Welcome to Customization and Configuration Panel!</h1>
+			<h1 class="text-center">Wee to Customization and Configuration Panel!</h1>
 			
 			<h2>Welcome ${key}</h2>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.html">Logout</a>
@@ -33,7 +33,7 @@
                     <a href="#"><span class="glyphicon glyphicon-share"></span> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-ok"></span> Shortcuts</a>
+                    <a href="querymanager/1"><span class="glyphicon glyphicon-ok"></span> Shortcuts</a>
                 </li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-ok"></span> Overview</a>

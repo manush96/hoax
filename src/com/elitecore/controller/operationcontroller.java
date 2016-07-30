@@ -1,5 +1,7 @@
 package com.elitecore.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -7,12 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.elitecore.dao.querydao;
 import com.elitecore.dto.*;
+import com.elitecore.model.Query;
 import com.elitecore.model.User;
+import com.elitecore.services.queryservices;
 import com.elitecore.services.transfer;
 import com.elitecore.services.userservices;
 import com.elitecore.services.validator;
@@ -21,12 +28,16 @@ import com.elitecore.services.validator;
 public class operationcontroller {
 
 private userservices userService;
-	
-	@Autowired
+//private queryservices queryservices;
+
+@Autowired
+queryservices services;
+@Autowired
 	public operationcontroller(userservices userService) {
 		this.userService = userService;
+//		this.queryservices=queryservices;
+//	
 	}
-	
 	@RequestMapping(value="/hello.html")
 	public ModelAndView hello()
 	{
@@ -94,5 +105,14 @@ private userservices userService;
 	{
 		session.invalidate();
 		return "redirect:hello.html";
+	}
+	
+	@RequestMapping(value="/querymanager/{pageid}")
+	public ModelAndView querygetter(@PathVariable int pageid)
+	{
+		int total=5;
+		List<Query> list=services.getbypage(pageid, total);
+		return new ModelAndView("pagination","list",list);
+		
 	}
 }

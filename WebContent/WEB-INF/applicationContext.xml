@@ -73,5 +73,12 @@
 	   
     <!-- Enable @Transactional annotation -->
     <tx:annotation-driven />
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">  
+		<property name="dataSource" ref="dataSource"></property>  
+	</bean>  
+  
+	<bean id="dao" class="com.elitecore.dao.querydao">  
+		<property name="template" ref="jt"></property>  
+	</bean>  
 	
 </beans>
